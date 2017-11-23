@@ -7,17 +7,22 @@ import java.util.LinkedList;
  */
 public class RandomStringStatistics {
 
-    private static final int NUM_MIN_STRINGS = 1000;
-    private static final int NUM_MAX_STRINGS = 10000;
+    private static final int MIN_LENGTH = 1000;
+    private static final int MAX_LENGTH = 10000;
 
     static LinkedList<String> generateRandomString(long nStrings) {
 
         LinkedList<String> randomStrings = new LinkedList<String>();
         for(long k = 0; k < nStrings; k++) {
-            randomStrings.add(RandomStringGenerator.getRandomString(NUM_MIN_STRINGS, NUM_MAX_STRINGS));
+            randomStrings.add(RandomStringGenerator.getRandomString(MIN_LENGTH, MAX_LENGTH));
         }
 
         return randomStrings;
+    }
+
+    static int[] getLengthBounds() {
+
+        return new int[] {MIN_LENGTH, MAX_LENGTH};
     }
 
 
